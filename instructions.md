@@ -1,33 +1,35 @@
-# How to Use GitHub Issue Creator
+# How to Use Lightning Issues
 
-Follow these simple steps to generate and post issues to any public GitHub repository.
+Follow these simple steps to generate professional issues for any public GitHub repository using **Lightning Issues**.
 
 ## 1. Enter Repository URL
-*   Navigate to the main page of the application.
-*   Copy the URL of the GitHub repository you want to contribute to (e.g., `https://github.com/facebook/react`).
-*   Paste it into the main search bar.
+*   Navigate to the **Lightning Issues** home page.
+*   Copy the URL of the GitHub repository you wish to analyze (e.g., `https://github.com/lightning-bounties/platform`).
+*   Paste it into the main search input field.
 
-## 2. (Optional) Configure Advanced Options
-Click on the **Advanced Options** dropdown to fine-tune the results:
-*   **Project Goals:** Type specific instructions for the AI.
-    *   *Example:* "Focus on improving the mobile responsiveness of the CSS."
-    *   *Example:* "Find security vulnerabilities in the authentication flow."
-*   **Scan for TODOs:** Toggle this **ON** if you want the AI to search the codebase for `TODO` comments and turn them into issues.
+## 2. (Optional) Customize with Advanced Options
+Click the **Advanced Options** dropdown to guide the AI:
+*   **Project Goals:** Tell Lightning Issues what to focus on.
+    *   *Example:* "We need to improve the accessibility of our forms."
+    *   *Example:* "Look for performance bottlenecks in the API."
+*   **Scan for TODOs:** Keep this **ON** to let the AI hunt for `TODO` comments in the source code and turn them into issues.
 
-## 3. Generate Issues
-*   Click the green **Generate** button.
-*   Wait a few seconds while the AI analyzes the repository and searches for context.
+## 3. Generate Analysis
+*   Click the **Generate** button.
+*   The AI will scan the repository structure and context using Google Search Grounding.
 
-## 4. Review Suggestions
-*   The app will present 3 distinct issue cards (Bug, Feature, etc.).
-*   Click **View Content** on any card to see the full Markdown body.
-*   Read the **Reasoning** to understand why this issue was suggested.
+## 4. Review & Edit
+*   Lightning Issues will present 3 distinct suggestions.
+*   Click **View Content** to read the details.
+*   Click the **Edit (Pencil)** icon to modify the text. You can use the full-screen mode for a better writing experience.
 
-## 5. Create the Issue
-*   Select the suggestion you like best.
-*   Click the **Create Issue** button.
-*   A new tab will open on GitHub with the Title, Body, and Labels pre-filled.
-*   Review the text one last time on GitHub and click **Submit new issue**.
+## 5. Post to GitHub
+*   Once satisfied, click **Create Issue**.
+*   This opens a new tab on GitHub with your issue pre-filled.
+*   Review on GitHub and click **Submit new issue**.
+
+## 6. (Pro Tip) Add a Bounty
+*   Take the URL of the created issue and head over to **Lightning Bounties** to attach a reward or solicit funding for the task!
 
 ---
-*Note: You must have a GitHub account and be logged in to post issues.*
+*Lightning Issues is designed to help you contribute faster and earn more.*

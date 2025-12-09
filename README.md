@@ -1,26 +1,34 @@
-# GitHub Issue Creator
+# Lightning Issues - AI Powered GitHub Issue Generator
 
-**GitHub Issue Creator** is an AI-powered tool designed to streamline the open-source contribution process. By simply providing a GitHub repository URL, the application analyzes the project's structure, existing issues, and potential gaps to generate professional, ready-to-post issues.
+**Lightning Issues** is an AI-powered tool developed by **Lightning Bounties** to accelerate open-source development. By simply providing a GitHub repository URL, the application analyzes the project's structure, existing code, and potential gaps to generate professional, ready-to-post issues that are perfect for bounties.
 
-## 🚀 Benefits for Developers
+## ⚡ What is Lightning Issues?
 
-*   **Overcome Writer's Block:** struggling to articulate a bug report or feature request? Let the AI draft it for you.
-*   **Standardize Contributions:** Ensures all created issues follow a professional structure with clear headers, steps, and reasoning.
-*   **Save Time:** Automates the "analysis to issue" pipeline. No need to manually copy-paste templates or format markdown.
-*   **Discover Opportunities:** Finds potential improvements or refactoring opportunities in repositories that you might have missed.
+Lightning Issues acts as your intelligent assistant for open source contributions. Whether you are a maintainer looking to populate your backlog or a contributor seeking opportunities to earn rewards on the **Lightning Bounties** platform, this tool automates the tedious process of writing high-quality issue descriptions.
+
+## 🚀 Key Benefits
+
+*   **Bounty-Ready Issues:** Creates detailed, well-structured issues that are ideal for attaching financial rewards on Lightning Bounties.
+*   **AI-Driven Analysis:** Utilizes Google Gemini to understand complex codebases and suggest relevant improvements.
+*   **Discover "Hidden" Work:** The **TODO Scanner** feature finds `// TODO` and `// FIXME` comments buried in the code and converts them into actionable tasks.
+*   **One-Click Contribution:** Generates a direct link to the GitHub "New Issue" page with the Title, Body, and Labels pre-filled.
 
 ## ✨ Features
 
-*   **AI-Powered Analysis:** Uses Google Gemini 2.5 Flash to understand the repository's purpose and tech stack.
-*   **Smart Suggestions:** Automatically suggests Bugs, Features, Refactoring, or Documentation issues based on repo analysis.
-*   **Project Goals Integration:** Custom input to tell the AI exactly what you want to achieve (e.g., "Improve accessibility").
-*   **TODO Scanner:** Detects `// TODO` and `// FIXME` comments in the code and converts them into actionable issues.
-*   **One-Click Posting:** Generates a pre-filled link to the GitHub "New Issue" page—no copy-pasting required.
-*   **Markdown Preview:** View exactly how the issue will look on GitHub before you create it.
-*   **Dark & Light Mode:** Fully responsive UI that adapts to your preferred theme.
+*   **Intelligent Suggestions:** Automatically drafts Bugs, Features, Refactoring, and Documentation tasks.
+*   **Project Goals Integration:** Tailor the AI's focus by providing specific goals (e.g., "Improve security" or "Enhance mobile UI").
+*   **Full-Screen Editor:** Refine your issue description in a comfortable, distraction-free environment before posting.
+*   **Dark & Light Mode:** A beautiful, responsive interface that adapts to your workflow.
 
-## 🛠️ Built With
+## 🛠️ Tech Stack
 
 *   **Frontend:** React 19, Tailwind CSS, Lucide Icons
-*   **AI:** Google Gemini API (@google/genai)
-*   **Deploy:** Google Cloud Run
+*   **AI Engine:** Google Gemini API (@google/genai)
+*   **Infrastructure:** Google Cloud Run
+
+## 🔗 Powered by Lightning Bounties
+
+Lightning Issues is part of the **Lightning Bounties** ecosystem, empowering developers to monetize their open-source contributions.
+
+---
+© 2025 Lightning Issues. Powered by Lightning Bounties.

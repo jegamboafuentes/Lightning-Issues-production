@@ -54,10 +54,16 @@ export const generateIssueSuggestions = async (
     - The type of issue (Bug, Feature, Refactor, Documentation).
     - A short reasoning.
 
+    CRITICAL INSTRUCTION:
+    If Google Search returns NO information (e.g. the repo is new, empty, or not indexed), DO NOT refuse to answer. 
+    Instead, generate 3 generic, high-quality "best practice" issue suggestions that would apply to almost any open-source project. 
+    Examples of fallback suggestions: "Add a Comprehensive README", "Set up GitHub Actions for CI", "Add Contribution Guidelines", "Create Issue Templates".
+    
     IMPORTANT OUTPUT FORMAT:
     You must return a valid JSON array.
     Do not wrap the JSON in markdown code blocks.
     Start the response with '[' and end with ']'.
+    Do not include any conversational text like "I attempted to analyze..." or "Here are the suggestions".
 
     Example:
     [
@@ -91,6 +97,13 @@ export const generateIssueSuggestions = async (
     const jsonMatch = jsonStr.match(/\[[\s\S]*\]/);
     if (jsonMatch) {
       jsonStr = jsonMatch[0];
+    } else {
+      // If we can't find a JSON array block, and the text doesn't start with [, it's likely a conversational error.
+      if (!jsonStr.startsWith('[')) {
+        console.warn("AI returned non-JSON response:", text);
+        // We throw a specific error so the UI can handle it or the user knows why.
+        throw new Error("The AI provided a text response instead of specific issues. This usually happens for new or unindexed repositories. Please try again.");
+      }
     }
 
     // 2. Clean up any markdown code blocks that might still be present

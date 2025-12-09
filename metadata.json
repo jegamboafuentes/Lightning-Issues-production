@@ -1,5 +1,5 @@
 {
-  "name": "GitHub Issue Creator",
-  "description": "AI-powered assistant that analyzes GitHub repositories to suggest comprehensive issues, features, and bug fixes, generating ready-to-post links instantly.",
+  "name": "Lightning Issues",
+  "description": "Lightning Issues is an AI-powered tool by Lightning Bounties that generates professional GitHub issues instantly, helping developers contribute to open source and earn rewards.",
   "requestFramePermissions": []
 }

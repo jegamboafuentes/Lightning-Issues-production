@@ -39,7 +39,11 @@ const App: React.FC = () => {
   return (
     <Layout>
       <div className="flex flex-col items-center">
-        <RepoInput onAnalyze={handleAnalyze} isLoading={state.isLoading} />
+        <RepoInput 
+          onAnalyze={handleAnalyze} 
+          isLoading={state.isLoading} 
+          hasData={!!state.data}
+        />
 
         {/* Error State */}
         {state.error && (
@@ -49,7 +53,7 @@ const App: React.FC = () => {
           </div>
         )}
 
-        {/* Results Grid */}
+        {/* Results List */}
         {state.data && (
           <div className="w-full animate-in fade-in slide-in-from-bottom-8 duration-700">
             <div className="flex items-center justify-between mb-6">
@@ -66,7 +70,7 @@ const App: React.FC = () => {
               )}
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex flex-col gap-6">
               {state.data.map((suggestion, index) => (
                 <IssueCard 
                     key={index} 

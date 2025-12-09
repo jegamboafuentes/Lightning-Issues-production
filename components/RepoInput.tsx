@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Search, Loader2, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { Search, Loader2, Sparkles, ChevronDown, ChevronUp, RefreshCw } from 'lucide-react';
 
 interface RepoInputProps {
   onAnalyze: (url: string, goals: string, scanTodos: boolean) => void;
   isLoading: boolean;
+  hasData?: boolean;
 }
 
-export const RepoInput: React.FC<RepoInputProps> = ({ onAnalyze, isLoading }) => {
+export const RepoInput: React.FC<RepoInputProps> = ({ onAnalyze, isLoading, hasData }) => {
   const [url, setUrl] = useState('');
   const [goals, setGoals] = useState('');
   const [scanTodos, setScanTodos] = useState(true);
@@ -19,14 +20,20 @@ export const RepoInput: React.FC<RepoInputProps> = ({ onAnalyze, isLoading }) =>
     }
   };
 
+  const handleRegenerate = () => {
+    if (url.trim()) {
+      onAnalyze(url.trim(), goals, scanTodos);
+    }
+  };
+
   return (
     <div className="w-full max-w-2xl mx-auto mb-12">
       <div className="text-center mb-8">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-github-text mb-4 tracking-tight">
-          Supercharge your <span className="text-transparent bg-clip-text bg-gradient-to-r from-github-accent to-purple-400">Open Source</span> contributions
+          Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-github-accent to-purple-400">Lightning Issues</span>
         </h2>
-        <p className="text-github-secondary text-base sm:text-lg px-2">
-          Paste a GitHub repository URL below. Our AI will analyze it and generate professional, ready-to-post issues for you.
+        <p className="text-github-secondary text-base sm:text-lg px-2 max-w-xl mx-auto">
+          The fastest way to generate high-quality GitHub issues. Streamline your open source contributions and get ready to earn rewards on <strong>Lightning Bounties</strong>.
         </p>
       </div>
 
@@ -46,35 +53,50 @@ export const RepoInput: React.FC<RepoInputProps> = ({ onAnalyze, isLoading }) =>
                 type="text"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                placeholder="https://github.com/facebook/react"
+                placeholder="https://github.com/lightning-bounties/example"
                 className="flex-1 bg-transparent border-none text-github-text placeholder-gray-500 focus:ring-0 text-base sm:text-lg py-3 outline-none w-full min-w-0"
                 disabled={isLoading}
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={isLoading || !url}
-              className={`
-                flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-white transition-all w-full sm:w-auto
-                ${isLoading || !url 
-                  ? 'bg-github-border text-gray-500 cursor-not-allowed' 
-                  : 'bg-github-primary hover:bg-github-primaryHover shadow-lg shadow-green-900/20 active:scale-95'
-                }
-              `}
-            >
-              {isLoading ? (
-                <>
-                  <Loader2 size={20} className="animate-spin" />
-                  <span>Analyzing...</span>
-                </>
-              ) : (
-                <>
-                  <Sparkles size={20} />
-                  <span>Generate</span>
-                </>
+            <div className="flex gap-2 sm:contents">
+              {hasData && (
+                <button
+                  type="button"
+                  onClick={handleRegenerate}
+                  disabled={isLoading || !url}
+                  className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-md font-semibold text-github-text bg-github-page border border-github-border hover:border-github-accent hover:text-github-accent transition-all active:scale-95 whitespace-nowrap"
+                  title="Generate new suggestions based on the same inputs"
+                >
+                  <RefreshCw size={20} className={isLoading ? "animate-spin" : ""} />
+                  <span className="hidden sm:inline">Regenerate</span>
+                </button>
               )}
-            </button>
+
+              <button
+                type="submit"
+                disabled={isLoading || !url}
+                className={`
+                  flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-white transition-all w-full sm:w-auto
+                  ${isLoading || !url 
+                    ? 'bg-github-border text-gray-500 cursor-not-allowed' 
+                    : 'bg-github-primary hover:bg-github-primaryHover shadow-lg shadow-green-900/20 active:scale-95'
+                  }
+                `}
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 size={20} className="animate-spin" />
+                    <span>Analyzing...</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles size={20} />
+                    <span>Generate</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Advanced Options Toggler */}

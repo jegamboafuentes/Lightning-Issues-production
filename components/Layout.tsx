@@ -6,21 +6,18 @@ interface LayoutProps {
 }
 
 // Custom Icon for Nostr since it's not in Lucide
+// Replacing generic icon with Ostrich representation
 const NostrIcon = ({ size = 18, className = "" }: { size?: number, className?: string }) => (
   <svg 
     width={size} 
     height={size} 
     viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+    fill="currentColor" 
     className={className}
+    xmlns="http://www.w3.org/2000/svg"
   >
-     {/* Ostrich-like icon representation for Nostr */}
-    <path d="M12 2C8 2 6 6 6 6l-2 4s-1 2 1 2 4 0 4 0v10h2v-8h2v8h2v-8c1-1 2-3 2-6 0 0-2-6-5-6Z" />
-    <path d="M15 6h.01" />
+     <path d="M20.06 14.78c-.28 0-.54.05-.79.13-.23-.62-.64-1.16-1.17-1.55.03-.18.05-.37.05-.56 0-1.84-1.49-3.33-3.33-3.33-1.84 0-3.33 1.49-3.33 3.33 0 .19.02.38.05.56-.53.39-.94.93-1.17 1.55-.25-.08-.51-.13-.79-.13-1.47 0-2.67 1.19-2.67 2.67s1.2 2.67 2.67 2.67c.28 0 .54-.05.79-.13.23.62.64 1.16 1.17 1.55-.03.18-.05.37-.05.56 0 .52.12 1.01.32 1.46-2.1-.47-3.92-1.74-5.04-3.52 1.25-1.79 3.25-3.05 5.54-3.23.41-1.99 1.95-3.56 3.91-4.04C15.42 12.06 14.86 11 14 11c-1.66 0-3 1.34-3 3 0 .18.02.35.05.52-.77.26-1.42.78-1.86 1.45-.63-.19-1.3-.29-2-.29-3.14 0-5.83 1.93-6.91 4.72 1.28 2.38 3.65 4.14 6.46 4.51.58 1.41 1.98 2.41 3.61 2.41 2.16 0 3.92-1.76 3.92-3.92 0-.19-.02-.38-.05-.56.53-.39.94-.93 1.17-1.55.25.08.51.13.79.13 1.47 0 2.67-1.19 2.67-2.67s-1.2-2.64-2.67-2.64zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+     <circle cx="15.5" cy="5.5" r="1.5" />
   </svg>
 );
 
@@ -75,7 +72,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="h-4 w-px bg-github-border mx-1 hidden xs:block"></div>
 
             <h1 className="font-bold text-sm sm:text-lg tracking-tight text-github-text truncate">
-              GitHub Issue Creator
+              Lightning Issues
             </h1>
           </div>
 
@@ -188,7 +185,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             
             <div className="border-t border-github-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
                 <p className="text-xs text-github-secondary">
-                    © 2025 GitHub Issue Creator. Powered by Lightning Bounties.
+                    © 2025 Lightning Issues. Powered by Lightning Bounties.
                 </p>
                 <div className="flex gap-6 text-xs text-github-secondary">
                     {/* Empty div for layout balance or future legal links */}
