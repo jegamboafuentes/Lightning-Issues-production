@@ -43,8 +43,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Using absolute path assuming the folder is in 'public/images/'
-  const logoSrc = '/images/logo.png';
+  // Using relative path 'images/logo.svg' which maps to 'public/images/logo.svg' in standard setups.
+  const logoSrc = 'images/logo.svg';
 
   return (
     <div className="flex flex-col min-h-screen bg-github-dark text-github-text font-sans selection:bg-github-accent selection:text-white transition-colors duration-300">
@@ -58,7 +58,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <img 
                   src={logoSrc}
                   alt="Lightning Bounties" 
-                  className="h-6 sm:h-8 w-auto object-contain max-h-10"
+                  className="h-8 w-auto object-contain max-h-12"
                   onError={() => setImageError(true)}
                 />
               ) : (
