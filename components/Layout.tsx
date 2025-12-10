@@ -44,7 +44,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   };
 
   // Using relative path 'images/logo.svg' which maps to 'public/images/logo.svg' in standard setups.
-  const logoSrc = 'images/logo.png';
+  const logoSrc = 'images/logo.svg';
 
   return (
     <div className="flex flex-col min-h-screen bg-github-dark text-github-text font-sans selection:bg-github-accent selection:text-white transition-colors duration-300">
@@ -58,7 +58,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <img 
                   src={logoSrc}
                   alt="Lightning Bounties" 
-                  className="h-8 w-auto object-contain max-h-12"
+                  className="h-12 w-auto object-contain"
                   onError={() => setImageError(true)}
                 />
               ) : (
@@ -128,7 +128,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                     <img 
                         src={logoSrc}
                         alt="Lightning Bounties" 
-                        className="h-8 w-auto object-contain max-h-12"
+                        className="h-12 w-auto object-contain"
                         onError={() => setImageError(true)}
                     />
                   ) : (
