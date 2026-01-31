@@ -1,7 +1,16 @@
 import { GoogleGenAI } from "@google/genai";
-import { IssueSuggestion, IssueType } from "../types";
+import { IssueSuggestion } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// --- FIX START ---
+// We use import.meta.env.VITE_GEMINI_API_KEY to match your Dockerfile
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
+
+if (!apiKey) {
+  console.error("CRITICAL ERROR: VITE_GEMINI_API_KEY is missing. The app will fail to fetch data.");
+}
+
+const ai = new GoogleGenAI({ apiKey });
+// --- FIX END ---
 
 export const parseRepoUrl = (url: string): { owner: string; name: string } | null => {
   try {
