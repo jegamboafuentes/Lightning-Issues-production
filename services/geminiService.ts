@@ -1,12 +1,17 @@
 import { GoogleGenAI } from "@google/genai";
 import { IssueSuggestion } from "../types";
 
-// --- FIX START ---
-// We use import.meta.env.VITE_GEMINI_API_KEY to match your Dockerfile
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
+// DEBUGGING LOGS
+const viteKey = import.meta.env.VITE_GEMINI_API_KEY;
+console.log("🔍 [DEBUG] Key Check:");
+console.log("  - import.meta.env.VITE_GEMINI_API_KEY:", viteKey ? "Exists (starts with " + viteKey.substring(0, 4) + "...)" : "UNDEFINED");
+
+const apiKey = viteKey || '';
 
 if (!apiKey) {
-  console.error("CRITICAL ERROR: VITE_GEMINI_API_KEY is missing. The app will fail to fetch data.");
+  console.error("❌ [DEBUG] API Key is MISSING. App will likely crash or fail requests.");
+} else {
+  console.log("✅ [DEBUG] API Key found.");
 }
 
 const ai = new GoogleGenAI({ apiKey });
