@@ -33,7 +33,7 @@ export const RepoInput: React.FC<RepoInputProps> = ({ onAnalyze, isLoading, hasD
           Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-github-accent to-purple-400">Lightning Issues</span>
         </h2>
         <p className="text-github-secondary text-base sm:text-lg px-2 max-w-xl mx-auto">
-          The fastest way to generate high-quality GitHub issues. Streamline your open source contributions and get ready to earn rewards on <strong>Lightning Bounties</strong>.
+          Enrique was here! The fastest way to generate high-quality GitHub issues. Streamline your open source contributions and get ready to earn rewards on <strong>Lightning Bounties</strong>.
         </p>
       </div>
 
